@@ -1,0 +1,33 @@
+<form [formGroup]="idGroup" (ngSubmit)="submit()">
+    <div class="form-group">
+        <label for="id-input">Please enter a South African identity number and press the validate button :</label>
+        <div class="input-group mb-3" id="id-input">
+            <input type="text" formControlName="idnumber" class="form-control" placeholder="Identity Number" aria-label="Identity Number" aria-describedby="btn-validate">
+            <div class="input-group-append">
+                <button [disabled]="!idGroup.valid" class="btn btn-primary" title="Validate" id="btn-validate"><i class="fas fa-play-circle"></i></button>
+            </div>
+        </div>
+        <small *ngIf="controlErrorRequired('idnumber')" class="cross-validation-error-message alert alert-danger">Id number is required</small>
+        <small *ngIf="controlErrorLength('idnumber')" class="cross-validation-error-message alert alert-danger">Id number must have a length of 13</small>
+    </div>
+</form>
+<div class="mt-4" *ngIf="idList && idList.length > 0">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id Number</th>
+                <th scope="col">Date of Birth</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Citizenship</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let id of idList">
+              <td>{{ id.idNumber }}</td>
+              <td>{{ id.dateOfBirth | date: 'dd/MM/yyyy' }}</td>
+              <td>{{ id.gender }}</td>
+              <td>{{ id.citizenship }}</td>
+          </tr>
+        </tbody>
+    </table>
+</div>

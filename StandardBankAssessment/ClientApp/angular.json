@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "StandardBankAssessment": {
+    "standardbankassessment": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -25,6 +25,7 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/ngx-toastr/toastr.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -52,18 +53,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "StandardBankAssessment:build"
+            "browserTarget": "standardbankassessment:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "StandardBankAssessment:build:production"
+              "browserTarget": "standardbankassessment:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "StandardBankAssessment:build"
+            "browserTarget": "standardbankassessment:build"
           }
         },
         "test": {
@@ -74,7 +75,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "styles.css"
+              "src/styles.css"
             ],
             "scripts": [],
             "assets": [
@@ -122,7 +123,7 @@
         }
       }
     },
-    "StandardBankAssessment-e2e": {
+    "standardbankassessment-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -130,7 +131,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "StandardBankAssessment:serve"
+            "devServerTarget": "standardbankassessment:serve"
           }
         },
         "lint": {
@@ -145,5 +146,5 @@
       }
     }
   },
-  "defaultProject": "StandardBankAssessment"
+  "defaultProject": "standardbankassessment"
 }
